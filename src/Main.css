@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.header__logo {
+  height: 20vmin;
   pointer-events: none;
 }
 
