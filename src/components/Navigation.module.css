@@ -13,3 +13,7 @@
 .item {
   color: #fff;
 }
+
+.active {
+  color: gold;
+}

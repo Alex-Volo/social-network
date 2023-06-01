@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav className={style.nav}>
       <ul>
         <li>
-          <a className={style.item} href="# ">
+          <a className={`${style.item} ${style.active}`} href="# ">
             Profile
           </a>
         </li>
