@@ -1,24 +1,25 @@
 import mainImage from "../img/main-top.jpg";
 import avatar from "../img/avatar.png";
+import style from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <main className="profile">
-      <header className="profile__header">
-        <img className="profile__img" src={mainImage} alt="profile" />
+    <main className={style.profile}>
+      <header className={style.header}>
+        <img className={style.headerImg} src={mainImage} alt="profile" />
       </header>
-      <div className="profile__content">
-        <div className="profile__author">
-          <img className="author__avatar" src={avatar} alt="author avatar" />
-          <div className="author__description">Описание юзера</div>
+      <div className={style.content}>
+        <div className={style.author}>
+          <img className={style.avatar} src={avatar} alt="author avatar" />
+          <div className={style.description}>Описание юзера</div>
         </div>
-        <div className="profile__posts">
+        <div className={style.posts}>
           <p>My posts</p>
-          <div className="posts__new-post">
+          <div className={style.addPost}>
             Инпут для нового поста и кнопка создать
           </div>
-          <div className="post1">Пост 1</div>
-          <div className="post2">Пост 2</div>
+          <div className={style.post}>Пост 1</div>
+          <div className={style.post}>Пост 2</div>
         </div>
       </div>
     </main>

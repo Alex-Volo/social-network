@@ -6,11 +6,11 @@ import Profile from "./components/Profile";
 
 function App() {
   return (
-    <wrapper className="app-wrapper">
+    <div className="app-wrapper">
       <Header />
       <Navigation />
       <Profile />
-    </wrapper>
+    </div>
   );
 }
 
