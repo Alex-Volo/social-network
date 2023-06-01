@@ -15,18 +15,7 @@
   pointer-events: none;
 }
 
-.navigation {
-  grid-column: 1 / 2;
-  background-color: rgb(0, 29, 155);
-}
 
-.navigation__ul {
-  list-style: none;
-}
-
-.navigation__item {
-  color: #fff;
-}
 
 .profile {
   grid-column: 2 / -1;
