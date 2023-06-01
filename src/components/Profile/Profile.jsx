@@ -1,5 +1,5 @@
-import mainImage from "../img/main-top.jpg";
-import avatar from "../img/avatar.png";
+import mainImage from "./main-top.jpg";
+import avatar from "./avatar.png";
 import style from "./Profile.module.css";
 
 const Profile = () => {
