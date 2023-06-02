@@ -6,7 +6,8 @@ const Profile = () => {
         <div className={style.posts}>
             <p>My posts</p>
             <div className={style.addPost}>
-                Инпут для нового поста и кнопка создать
+                <textarea></textarea>
+                <button>Add post</button>
             </div>
             <Post />
             <Post />
