@@ -1,4 +1,5 @@
 import style from "./Posts.module.css";
+import Post from "./Post/Post.jsx";
 
 const Profile = () => {
     return (
@@ -7,8 +8,10 @@ const Profile = () => {
             <div className={style.addPost}>
                 Инпут для нового поста и кнопка создать
             </div>
-            <div className={style.post}>Пост 1</div>
-            <div className={style.post}>Пост 2</div>
+            <Post />
+            <Post />
+            <Post />
+            <Post />
         </div>
     );
 };
