@@ -1,1 +1,9 @@
+.post {
+    display: flex;
+    margin: 10px 0;
+}
 
+.avatar {
+    width: 50px;
+    border-radius: 50%;
+}
