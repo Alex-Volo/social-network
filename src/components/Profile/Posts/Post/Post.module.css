@@ -1,9 +1,17 @@
 .post {
-    display: flex;
-    margin: 10px 0;
+  display: flex;
+  margin: 10px 0;
 }
 
 .avatar {
-    width: 50px;
-    border-radius: 50%;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.text {
+  padding-left: 16px;
+}
+
+.text p {
+  margin: 0;
 }
