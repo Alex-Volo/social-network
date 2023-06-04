@@ -6,12 +6,12 @@ const Navigation = () => {
     <nav className={style.nav}>
       <ul>
         <li>
-          <a className={`${style.item} ${style.active}`} href="# ">
+          <a className={`${style.item} ${style.active}`} href="/profile">
             Profile
           </a>
         </li>
         <li>
-          <a className={style.item} href="# ">
+          <a className={style.item} href="/dialogs">
             Messages
           </a>
         </li>

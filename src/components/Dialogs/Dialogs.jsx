@@ -7,7 +7,7 @@ const Dialogs = () => {
         А нужен ли хедер
       </header>
       <div className={style.content}>
-        А здесь контент
+        А здесь контентsss
       </div>
     </>
   );
