@@ -1,12 +1,16 @@
 .app-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 100px 1fr;
-  gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px 1fr;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .app__main {
-  grid-column: 2 / -1;
+    grid-column: 2 / -1;
+}
+
+a.active {
+    color: gold;
 }

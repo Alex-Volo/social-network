@@ -1,38 +1,39 @@
+import { NavLink } from "react-router-dom";
 import style from "./Navigation.module.css";
 // import "./Navigation.css";
 
 const Navigation = () => {
-  return (
-    <nav className={style.nav}>
-      <ul>
-        <li>
-          <a className={`${style.item} ${style.active}`} href="/profile">
-            Profile
-          </a>
-        </li>
-        <li>
-          <a className={style.item} href="/dialogs">
-            Messages
-          </a>
-        </li>
-        <li>
-          <a className={style.item} href="# ">
-            News
-          </a>
-        </li>
-        <li>
-          <a className={style.item} href="# ">
-            Music
-          </a>
-        </li>
-        <li>
-          <a className={style.item} href="# ">
-            Settings
-          </a>
-        </li>
-      </ul>
-    </nav>
-  );
+    return (
+        <nav className={style.nav}>
+            <ul>
+                <li>
+                    <NavLink className={style.item} to="/">
+                        Profile
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className={style.item} to="/dialogs">
+                        Messages
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className={style.item} to="/news">
+                        News
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className={style.item} to="/music">
+                        Music
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className={style.item} to="/settings">
+                        Settings
+                    </NavLink>
+                </li>
+            </ul>
+        </nav>
+    );
 };
 
 export default Navigation;
