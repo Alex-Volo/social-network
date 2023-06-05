@@ -19,7 +19,7 @@ function App() {
                     <Routes>
                         <Route path="/" Component={Profile} />
                         <Route path="/profile" Component={Profile} />
-                        <Route path="/dialogs" Component={Dialogs} />
+                        <Route path="/dialogs/*" Component={Dialogs} />
                         <Route path="/news" Component={News} />
                         <Route path="/music" Component={Music} />
                         <Route path="/settings" Component={Settings} />
