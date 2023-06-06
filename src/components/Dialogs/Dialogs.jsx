@@ -9,6 +9,8 @@ const DialogItem = (props) => (
     </div>
 );
 
+const Message = (props) => <p>{props.message}</p>;
+
 const Dialogs = () => {
     return (
         <div className={style.dialogs_wrapper}>
@@ -24,11 +26,11 @@ const Dialogs = () => {
             </div>
 
             <div className="messages">
-                <p>Message 1</p>
-                <p>Message 2</p>
-                <p>Message 3</p>
-                <p>Message 4</p>
-                <p>Message 5</p>
+                <Message message="Message" />
+                <Message message="Message" />
+                <Message message="Message" />
+                <Message message="Message" />
+                <Message message="Message" />
             </div>
         </div>
     );
