@@ -1,7 +1,13 @@
 import style from "./Posts.module.css";
 import Post from "./Post/Post.jsx";
 
-const Profile = () => {
+const Posts = () => {
+  const postsData = [
+    {text: "Пусть здесь будет текст", likesCount: 0},
+    {text: "Разные посты", likesCount: 20},
+    {text: "Будут лежать", likesCount: 5},
+    {text: "Здесь", likesCount: 7},
+  ]
   return (
     <div className={style.posts}>
       <p>My posts</p>
@@ -9,12 +15,13 @@ const Profile = () => {
         <textarea></textarea>
         <button>Add post</button>
       </div>
-      <Post text="Пусть здесь будет текст" likesCount="0" />
-      <Post text="Разные посты" likesCount="20" />
-      <Post text="Будут лежать" likesCount="5" />
-      <Post text="Здесь" likesCount="7" />
+      <Post text={postsData[0].text} likesCount={postsData[0].likesCount} />
+      <Post text={postsData[1].text} likesCount={postsData[1].likesCount} />
+      <Post text={postsData[2].text} likesCount={postsData[2].likesCount} />
+      <Post text={postsData[3].text} likesCount={postsData[3].likesCount} />
+
     </div>
   );
 };
 
-export default Profile;
+export default Posts;
