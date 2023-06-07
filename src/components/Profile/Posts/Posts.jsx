@@ -2,7 +2,6 @@ import style from "./Posts.module.css";
 import Post from "./Post/Post.jsx";
 
 const Posts = (props) => {
-
   return (
     <div className={style.posts}>
       <p>My posts</p>
@@ -10,7 +9,7 @@ const Posts = (props) => {
         <textarea></textarea>
         <button>Add post</button>
       </div>
-      {props.props.map((post) => (
+      {props.postsData.map((post) => (
         <Post text={post.text} likesCount={post.likesCount} />
       ))}
     </div>

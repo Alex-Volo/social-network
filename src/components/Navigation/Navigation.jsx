@@ -13,7 +13,7 @@ const Navigation = () => {
         </li>
         <li>
           <NavLink className={style.item} to="/dialogs">
-            Messages
+            Dialogs
           </NavLink>
         </li>
         <li>

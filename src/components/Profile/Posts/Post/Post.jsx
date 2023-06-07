@@ -2,7 +2,7 @@ import style from "./Post.module.css";
 import avatar from "../../avatar.png";
 // src\components\Profile\avatar.png
 
-const Profile = (props) => {
+const Post = (props) => {
   return (
     <div className={style.post}>
       <img className={style.avatar} src={avatar} alt="Ava" />
@@ -14,4 +14,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default Post;
