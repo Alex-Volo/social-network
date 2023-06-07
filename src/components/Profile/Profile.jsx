@@ -3,7 +3,7 @@ import style from "./Profile.module.css";
 import Posts from "./Posts/Posts.jsx";
 import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <>
             <header className={style.header}>
@@ -15,7 +15,7 @@ const Profile = () => {
             </header>
             <div className={style.content}>
             <ProfileInfo />
-                <Posts />
+                <Posts props={props.props}/>
             </div>
         </>
     );

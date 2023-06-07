@@ -1,13 +1,8 @@
 import style from "./Posts.module.css";
 import Post from "./Post/Post.jsx";
 
-const Posts = () => {
-  const postsData = [
-    { text: "Пусть здесь будет текст", likesCount: 0 },
-    { text: "Разные посты", likesCount: 20 },
-    { text: "Будут лежать", likesCount: 5 },
-    { text: "Здесь", likesCount: 7 },
-  ];
+const Posts = (props) => {
+
   return (
     <div className={style.posts}>
       <p>My posts</p>
@@ -15,7 +10,7 @@ const Posts = () => {
         <textarea></textarea>
         <button>Add post</button>
       </div>
-      {postsData.map((post) => (
+      {props.props.map((post) => (
         <Post text={post.text} likesCount={post.likesCount} />
       ))}
     </div>
