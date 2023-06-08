@@ -1,3 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ava {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
 .dialog__item {
     text-decoration: none;
     color: black;
