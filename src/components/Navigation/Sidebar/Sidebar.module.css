@@ -1,0 +1,10 @@
+.wrapper {
+    background-color: rgb(247, 183, 8);
+}
+.friends {
+    display: flex;
+    justify-content: space-evenly;
+}
+.header {
+    text-align: center;
+}

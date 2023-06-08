@@ -28,6 +28,16 @@ const state = {
       { text: "Здесь", likesCount: 7 },
     ],
   },
+  sidebar: {
+    friends: [
+      {name: "Artur",
+      ava: ava1,},
+      {name: "Alex",
+      ava: ava2,},
+      {name: "Dmitriy",
+      ava: ava3,},
+    ]
+  }
 };
 
 export default state;
