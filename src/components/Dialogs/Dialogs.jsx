@@ -10,7 +10,7 @@ const Dialogs = (props) => {
             </header>
             <div className={style.dialogs}>
                 {props.dialogsState.dialogsData.map((dia) => (
-                    <DialogItem name={dia.name} id={dia.id} />
+                    <DialogItem name={dia.name} id={dia.id} ava={dia.ava} />
                 ))}
             </div>
             <div className="messages">

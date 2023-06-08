@@ -1,11 +1,17 @@
+import ava1 from './ava1.jpg';
+import ava2 from './ava2.jpg';
+import ava3 from './ava3.jpg';
+import ava4 from './ava4.jpg';
+import ava5 from './ava5.jpg';
+
 const state = {
   dialogsPage: {
     dialogsData: [
-      { name: "Artur", id: "1" },
-      { name: "Alex", id: "2" },
-      { name: "Dmitriy", id: "3" },
-      { name: "Fedor", id: "4" },
-      { name: "Evgeniy", id: "5" },
+      { name: "Artur", id: "1", ava: ava1 },
+      { name: "Alex", id: "2", ava: ava2 },
+      { name: "Dmitriy", id: "3", ava: ava3 },
+      { name: "Fedor", id: "4", ava: ava4 },
+      { name: "Evgeniy", id: "5", ava: ava5 },
     ],
     messagesData: [
       { message: "Message", id: "1" },
