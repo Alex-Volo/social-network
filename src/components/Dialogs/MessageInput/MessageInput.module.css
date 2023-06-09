@@ -1,0 +1,8 @@
+.messageInputContainer {
+  display: flex;
+}
+.input {
+  display: block;
+  width: 100%;
+  margin-right: 10px;
+}
