@@ -40,4 +40,11 @@ const state = {
   }
 };
 
+export const addPost = (text) => {
+  const post = {
+    text: text,
+    likesCount: 0,
+  }
+  state.profilePage.postsData.push(post);
+}
 export default state;

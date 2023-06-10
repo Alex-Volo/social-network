@@ -3,7 +3,7 @@ import style from "./Profile.module.css";
 import Posts from "./Posts/Posts.jsx";
 import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 
-const Profile = (props) => {
+const Profile = ({profilePage, addPost}) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const Profile = (props) => {
       </header>
       <div className={style.content}>
         <ProfileInfo />
-        <Posts postsData={props.profilePage.postsData} />
+        <Posts postsData={profilePage.postsData} addPost={addPost} />
       </div>
     </>
   );
