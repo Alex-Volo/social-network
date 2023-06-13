@@ -4,57 +4,110 @@ import ava3 from "./ava3.jpg";
 import ava4 from "./ava4.jpg";
 import ava5 from "./ava5.jpg";
 
-export const state = {
+export const store = {
+  _state: {
     dialogsPage: {
-        dialogsData: [
-            { name: "Artur", id: "1", ava: ava1 },
-            { name: "Alex", id: "2", ava: ava2 },
-            { name: "Dmitriy", id: "3", ava: ava3 },
-            { name: "Fedor", id: "4", ava: ava4 },
-            { name: "Evgeniy", id: "5", ava: ava5 },
-        ],
-        messagesData: [
-            { message: "Message", id: "1" },
-            { message: "Message", id: "2" },
-            { message: "Message", id: "3" },
-            { message: "Message", id: "4" },
-        ],
+      dialogsData: [
+        { name: "Artur", id: "1", ava: ava1 },
+        { name: "Alex", id: "2", ava: ava2 },
+        { name: "Dmitriy", id: "3", ava: ava3 },
+        { name: "Fedor", id: "4", ava: ava4 },
+        { name: "Evgeniy", id: "5", ava: ava5 },
+      ],
+      messagesData: [
+        { message: "Message", id: "1" },
+        { message: "Message", id: "2" },
+        { message: "Message", id: "3" },
+        { message: "Message", id: "4" },
+      ],
     },
     profilePage: {
-        postsData: [
-            { text: "Пусть здесь будет текст", likesCount: 0 },
-            { text: "Разные посты", likesCount: 20 },
-            { text: "Будут лежать", likesCount: 5 },
-            { text: "Здесь", likesCount: 7 },
-        ],
-        textareaValue: "lkjl",
+      postsData: [
+        { text: "Пусть здесь будет текст", likesCount: 0 },
+        { text: "Разные посты", likesCount: 20 },
+        { text: "Будут лежать", likesCount: 5 },
+        { text: "Здесь", likesCount: 7 },
+      ],
+      textareaValue: "lkjl",
     },
     sidebar: {
-        friends: [
-            { name: "Artur", ava: ava1 },
-            { name: "Alex", ava: ava2 },
-            { name: "Dmitriy", ava: ava3 },
-        ],
+      friends: [
+        { name: "Artur", ava: ava1 },
+        { name: "Alex", ava: ava2 },
+        { name: "Dmitriy", ava: ava3 },
+      ],
     },
-};
-let renderEntireTree = null;
-
-export const addPost = () => {
+  },
+  _runSubscriber() {},
+  addPost() {
     const post = {
-        text: state.profilePage.textareaValue,
-        likesCount: 0,
+      text: this._state.profilePage.textareaValue,
+      likesCount: 0,
     };
-    state.profilePage.postsData.push(post);
-    state.profilePage.textareaValue = "";
-    renderEntireTree(state);
+    this._state.profilePage.postsData.push(post);
+    this._state.profilePage.textareaValue = "";
+    this._runSubscriber(this);
+  },
+  transmitText(str) {
+    debugger;
+    this._state.profilePage.textareaValue = str;
+    this._runSubscriber(this);
+  },
+  subscribe(observer) {
+    this._runSubscriber = observer;
+  },
 };
 
-export const transmitText = (str) => {
-    state.profilePage.textareaValue = str;
-    renderEntireTree(state);
-};
+// export const state = {
+//     dialogsPage: {
+//         dialogsData: [
+//             { name: "Artur", id: "1", ava: ava1 },
+//             { name: "Alex", id: "2", ava: ava2 },
+//             { name: "Dmitriy", id: "3", ava: ava3 },
+//             { name: "Fedor", id: "4", ava: ava4 },
+//             { name: "Evgeniy", id: "5", ava: ava5 },
+//         ],
+//         messagesData: [
+//             { message: "Message", id: "1" },
+//             { message: "Message", id: "2" },
+//             { message: "Message", id: "3" },
+//             { message: "Message", id: "4" },
+//         ],
+//     },
+//     profilePage: {
+//         postsData: [
+//             { text: "Пусть здесь будет текст", likesCount: 0 },
+//             { text: "Разные посты", likesCount: 20 },
+//             { text: "Будут лежать", likesCount: 5 },
+//             { text: "Здесь", likesCount: 7 },
+//         ],
+//         textareaValue: "lkjl",
+//     },
+//     sidebar: {
+//         friends: [
+//             { name: "Artur", ava: ava1 },
+//             { name: "Alex", ava: ava2 },
+//             { name: "Dmitriy", ava: ava3 },
+//         ],
+//     },
+// };
+// let renderEntireTree = null;
 
-export const subscribe = (observer) => {
-  renderEntireTree = observer;
-}
-export default state;
+// export const addPost = () => {
+//     const post = {
+//         text: state.profilePage.textareaValue,
+//         likesCount: 0,
+//     };
+//     state.profilePage.postsData.push(post);
+//     state.profilePage.textareaValue = "";
+//     renderEntireTree(state);
+// };
+
+// export const transmitText = (str) => {
+//     state.profilePage.textareaValue = str;
+//     renderEntireTree(state);
+// };
+
+// export const subscribe = (observer) => {
+//   renderEntireTree = observer;
+// };
