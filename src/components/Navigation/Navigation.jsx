@@ -3,31 +3,34 @@ import style from "./Navigation.module.css";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Navigation = (props) => {
+    const checkClass = ({ isActive }) =>
+        isActive ? style.itemActive : style.item;
+
     return (
         <nav className={style.nav}>
             <ul>
                 <li>
-                    <NavLink className={style.item} to="/">
+                    <NavLink className={checkClass} to="/">
                         Profile
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={style.item} to="/dialogs">
+                    <NavLink className={checkClass} to="/dialogs">
                         Dialogs
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={style.item} to="/news">
+                    <NavLink className={checkClass} to="/news">
                         News
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={style.item} to="/music">
+                    <NavLink className={checkClass} to="/music">
                         Music
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className={style.item} to="/settings">
+                    <NavLink className={checkClass} to="/settings">
                         Settings
                     </NavLink>
                 </li>
