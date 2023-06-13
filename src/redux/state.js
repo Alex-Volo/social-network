@@ -37,13 +37,24 @@ export const state = {
         ],
     },
 };
+let renderEntireTree = null;
 
-// export const addPost = (text) => {
-//   const post = {
-//     text: text,
-//     likesCount: 0,
-//   }
-//   state.profilePage.postsData.push(post);
-//   renderEntireTree(state);
-// }
+export const addPost = () => {
+    const post = {
+        text: state.profilePage.textareaValue,
+        likesCount: 0,
+    };
+    state.profilePage.postsData.push(post);
+    state.profilePage.textareaValue = "";
+    renderEntireTree(state);
+};
+
+export const transmitText = (str) => {
+    state.profilePage.textareaValue = str;
+    renderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  renderEntireTree = observer;
+}
 export default state;
