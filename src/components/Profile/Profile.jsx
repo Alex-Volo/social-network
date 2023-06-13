@@ -3,7 +3,7 @@ import style from "./Profile.module.css";
 import Posts from "./Posts/Posts.jsx";
 import ProfileInfo from "./ProfileInfo/ProfileInfo.jsx";
 
-const Profile = ({profilePage, addPost}) => {
+const Profile = ({profilePage, addPost, transmitText }) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const Profile = ({profilePage, addPost}) => {
       </header>
       <div className={style.content}>
         <ProfileInfo />
-        <Posts postsData={profilePage.postsData} addPost={addPost} />
+        <Posts postsData={profilePage.postsData} textareaValue={profilePage.textareaValue} addPost={addPost} transmitText={transmitText} />
       </div>
     </>
   );

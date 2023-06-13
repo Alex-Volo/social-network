@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route, Routes } from "react-router-dom";
 
-function App({ state, addPost }) {
+function App({ state, addPost, transmitText }) {
     return (
         <div className="app-wrapper">
             <Header />
@@ -18,7 +18,13 @@ function App({ state, addPost }) {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Profile profilePage={state.profilePage} addPost={addPost} />}
+                        element={
+                            <Profile
+                                profilePage={state.profilePage}
+                                addPost={addPost}
+                                transmitText={transmitText}
+                            />
+                        }
                     />
                     <Route path="/profile" element={<Profile />} />
                     <Route
