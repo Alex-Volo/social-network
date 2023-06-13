@@ -4,7 +4,8 @@ import ava3 from './ava3.jpg';
 import ava4 from './ava4.jpg';
 import ava5 from './ava5.jpg';
 
-const state = {
+
+export const state = {
   dialogsPage: {
     dialogsData: [
       { name: "Artur", id: "1", ava: ava1 },
@@ -40,11 +41,12 @@ const state = {
   }
 };
 
-export const addPost = (text) => {
-  const post = {
-    text: text,
-    likesCount: 0,
-  }
-  state.profilePage.postsData.push(post);
-}
+// export const addPost = (text) => {
+//   const post = {
+//     text: text,
+//     likesCount: 0,
+//   }
+//   state.profilePage.postsData.push(post);
+//   renderEntireTree(state);
+// }
 export default state;
