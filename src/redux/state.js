@@ -5,55 +5,62 @@ import ava4 from "./ava4.jpg";
 import ava5 from "./ava5.jpg";
 
 export const store = {
-  _state: {
-    dialogsPage: {
-      dialogsData: [
-        { name: "Artur", id: "1", ava: ava1 },
-        { name: "Alex", id: "2", ava: ava2 },
-        { name: "Dmitriy", id: "3", ava: ava3 },
-        { name: "Fedor", id: "4", ava: ava4 },
-        { name: "Evgeniy", id: "5", ava: ava5 },
-      ],
-      messagesData: [
-        { message: "Message", id: "1" },
-        { message: "Message", id: "2" },
-        { message: "Message", id: "3" },
-        { message: "Message", id: "4" },
-      ],
+    _state: {
+        dialogsPage: {
+            dialogsData: [
+                { name: "Artur", id: "1", ava: ava1 },
+                { name: "Alex", id: "2", ava: ava2 },
+                { name: "Dmitriy", id: "3", ava: ava3 },
+                { name: "Fedor", id: "4", ava: ava4 },
+                { name: "Evgeniy", id: "5", ava: ava5 },
+            ],
+            messagesData: [
+                { message: "Message", id: "1" },
+                { message: "Message", id: "2" },
+                { message: "Message", id: "3" },
+                { message: "Message", id: "4" },
+            ],
+        },
+        profilePage: {
+            postsData: [
+                { text: "Пусть здесь будет текст", likesCount: 0 },
+                { text: "Разные посты", likesCount: 20 },
+                { text: "Будут лежать", likesCount: 5 },
+                { text: "Здесь", likesCount: 7 },
+            ],
+            textareaValue: "lkjl",
+        },
+        sidebar: {
+            friends: [
+                { name: "Artur", ava: ava1 },
+                { name: "Alex", ava: ava2 },
+                { name: "Dmitriy", ava: ava3 },
+            ],
+        },
     },
-    profilePage: {
-      postsData: [
-        { text: "Пусть здесь будет текст", likesCount: 0 },
-        { text: "Разные посты", likesCount: 20 },
-        { text: "Будут лежать", likesCount: 5 },
-        { text: "Здесь", likesCount: 7 },
-      ],
-      textareaValue: "lkjl",
+    _runSubscriber() {},
+
+    dispatch(obj) {
+        switch (obj.type) {
+            case "TRANSMIT-TEXT":
+                this._state.profilePage.textareaValue = obj.str;
+                this._runSubscriber(this);
+                break;
+            case "ADD-POST":
+                const post = {
+                    text: this._state.profilePage.textareaValue,
+                    likesCount: 0,
+                };
+                this._state.profilePage.postsData.push(post);
+                this._state.profilePage.textareaValue = "";
+                this._runSubscriber(this);
+                break;
+            default:
+                break;
+        }
     },
-    sidebar: {
-      friends: [
-        { name: "Artur", ava: ava1 },
-        { name: "Alex", ava: ava2 },
-        { name: "Dmitriy", ava: ava3 },
-      ],
+
+    subscribe(observer) {
+        this._runSubscriber = observer;
     },
-  },
-  _runSubscriber() {},
-  addPost() {
-    const post = {
-      text: this._state.profilePage.textareaValue,
-      likesCount: 0,
-    };
-    this._state.profilePage.postsData.push(post);
-    this._state.profilePage.textareaValue = "";
-    this._runSubscriber(this);
-  },
-  transmitText(str) {
-    debugger;
-    this._state.profilePage.textareaValue = str;
-    this._runSubscriber(this);
-  },
-  subscribe(observer) {
-    this._runSubscriber = observer;
-  },
 };

@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route, Routes } from "react-router-dom";
 
-function App({ state, addPost, transmitText }) {
+function App({ state, dispatch, }) {
     return (
         <div className="app-wrapper">
             <Header />
@@ -21,8 +21,7 @@ function App({ state, addPost, transmitText }) {
                         element={
                             <Profile
                                 profilePage={state.profilePage}
-                                addPost={addPost}
-                                transmitText={transmitText}
+                                dispatch={dispatch}
                             />
                         }
                     />

@@ -8,17 +8,16 @@ import { store } from "./redux/state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const renderEntireTree = (store) => {
-  root.render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <App
-          state={store._state}
-          addPost={store.addPost.bind(store)}
-          transmitText={store.transmitText.bind(store)}
-        />
-      </BrowserRouter>
-    </React.StrictMode>
-  );
+    root.render(
+        <React.StrictMode>
+            <BrowserRouter>
+                <App
+                    state={store._state}
+                    dispatch={store.dispatch.bind(store)}
+                />
+            </BrowserRouter>
+        </React.StrictMode>
+    );
 };
 renderEntireTree(store);
 store.subscribe(renderEntireTree);
