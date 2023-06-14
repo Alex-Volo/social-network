@@ -19,7 +19,7 @@ const Dialogs = ({ dialogsState, dispatch }) => {
       <div className={style.dialogs}>{dialogElements}</div>
       <div className="messages">
         {messageElements}
-        <MessageInput dispatch={dispatch} />
+        <MessageInput dispatch={dispatch} dialogsState={dialogsState} />
       </div>
     </div>
   );
