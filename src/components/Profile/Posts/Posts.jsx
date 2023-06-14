@@ -1,16 +1,20 @@
 import style from "./Posts.module.css";
 import Post from "./Post/Post.jsx";
 import React from "react";
+import {
+    transmitTextActionCreator,
+    addPostActionCreator,
+} from "../../../redux/state";
 
 const Posts = ({ postsData, textareaValue, dispatch }) => {
     const refTextarea = React.createRef();
 
     const onChangeTextarea = (e) => {
         const textareaValue = e.target.value;
-        dispatch({ type: "TRANSMIT-TEXT", str: textareaValue });
+        dispatch(transmitTextActionCreator(textareaValue));
     };
     const addPost = () => {
-        dispatch({ type: "ADD-POST" });
+        dispatch(addPostActionCreator());
     };
 
     return (

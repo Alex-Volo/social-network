@@ -3,7 +3,10 @@ import ava2 from "./ava2.jpg";
 import ava3 from "./ava3.jpg";
 import ava4 from "./ava4.jpg";
 import ava5 from "./ava5.jpg";
-
+const ADD_POST = 'ADD-POST';
+const TRANSMIT_TEXT = 'TRANSMIT-TEXT';
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const transmitTextActionCreator = (text) => ({type: TRANSMIT_TEXT, str: text})
 export const store = {
     _state: {
         dialogsPage: {
@@ -40,10 +43,10 @@ export const store = {
     },
     _runSubscriber() {},
 
-    dispatch(obj) {
-        switch (obj.type) {
+    dispatch(action) {
+        switch (action.type) {
             case "TRANSMIT-TEXT":
-                this._state.profilePage.textareaValue = obj.str;
+                this._state.profilePage.textareaValue = action.str;
                 this._runSubscriber(this);
                 break;
             case "ADD-POST":
