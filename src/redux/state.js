@@ -3,10 +3,19 @@ import ava2 from "./ava2.jpg";
 import ava3 from "./ava3.jpg";
 import ava4 from "./ava4.jpg";
 import ava5 from "./ava5.jpg";
-const ADD_POST = 'ADD-POST';
-const TRANSMIT_TEXT = 'TRANSMIT-TEXT';
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const transmitTextActionCreator = (text) => ({type: TRANSMIT_TEXT, str: text})
+const ADD_POST = "ADD-POST";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const TRANSMIT_TEXT = "TRANSMIT-TEXT";
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const transmitTextActionCreator = (text) => ({
+    type: TRANSMIT_TEXT,
+    str: text,
+});
+export const addMessageActionCreator = (str) => ({
+    type: ADD_MESSAGE,
+    message: str,
+});
+
 export const store = {
     _state: {
         dialogsPage: {
@@ -56,6 +65,14 @@ export const store = {
                 };
                 this._state.profilePage.postsData.push(post);
                 this._state.profilePage.textareaValue = "";
+                this._runSubscriber(this);
+                break;
+            case "ADD-MESSAGE":
+                const message = {
+                    message: action.message,
+                    id: this._state.dialogsPage.messagesData.length + 1,
+                };
+                this._state.dialogsPage.messagesData.push(message);
                 this._runSubscriber(this);
                 break;
             default:

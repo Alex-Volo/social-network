@@ -28,7 +28,7 @@ function App({ state, dispatch, }) {
                     <Route path="/profile" element={<Profile />} />
                     <Route
                         path="/dialogs/*"
-                        element={<Dialogs dialogsState={state.dialogsPage} />}
+                        element={<Dialogs dialogsState={state.dialogsPage} dispatch={dispatch} />}
                     />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
