@@ -4,7 +4,7 @@ import React from "react";
 import {
     transmitTextActionCreator,
     addPostActionCreator,
-} from "../../../redux/state";
+} from "../../../redux/profile-reducer";
 
 const Posts = ({ postsData, textareaValue, dispatch }) => {
     const refTextarea = React.createRef();
