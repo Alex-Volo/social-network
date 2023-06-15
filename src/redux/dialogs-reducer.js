@@ -1,32 +1,55 @@
+import ava1 from "./img/ava1.jpg";
+import ava2 from "./img/ava2.jpg";
+import ava3 from "./img/ava3.jpg";
+import ava4 from "./img/ava4.jpg";
+import ava5 from "./img/ava5.jpg";
+
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_MESSAGE = "UPDATE-MESSAGE";
 
-const dialogsReducer = (state, action) => {
-    switch (action.type) {
-        case "ADD-MESSAGE":
-            const message = {
-                message: action.message,
-                id: state.messagesData.length + 1,
-            };
-            state.messagesData.push(message);
-            state.messageInput = "";
-            break;
-        case "UPDATE-MESSAGE":
-            state.messageInput = action.message;
-            break;
-        default:
-            break;
-    }
-    return state;
+const initialState = {
+  dialogsData: [
+    { name: "Artur", id: "1", ava: ava1 },
+    { name: "Alex", id: "2", ava: ava2 },
+    { name: "Dmitriy", id: "3", ava: ava3 },
+    { name: "Fedor", id: "4", ava: ava4 },
+    { name: "Evgeniy", id: "5", ava: ava5 },
+  ],
+  messagesData: [
+    { message: "Message", id: "1" },
+    { message: "Message", id: "2" },
+    { message: "Message", id: "3" },
+    { message: "Message", id: "4" },
+  ],
+  messageInput: "",
+};
+
+const dialogsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "ADD-MESSAGE":
+      const message = {
+        message: action.message,
+        id: state.messagesData.length + 1,
+      };
+      state.messagesData.push(message);
+      state.messageInput = "";
+      break;
+    case "UPDATE-MESSAGE":
+      state.messageInput = action.message;
+      break;
+    default:
+      break;
+  }
+  return state;
 };
 
 export const addMessageActionCreator = (str) => ({
-    type: ADD_MESSAGE,
-    message: str,
+  type: ADD_MESSAGE,
+  message: str,
 });
 export const updateMessageActionCreator = (text) => ({
-    type: UPDATE_MESSAGE,
-    message: text,
+  type: UPDATE_MESSAGE,
+  message: text,
 });
 
 export default dialogsReducer;
