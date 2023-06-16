@@ -1,19 +1,10 @@
 import style from "./MessageInput.module.css";
 import React from "react";
-import {
-    addMessageActionCreator,
-    updateMessageActionCreator,
-} from "../../../redux/dialogs-reducer";
 
-const MessageInput = ({ dispatch, dialogsState }) => {
-    const inputRef = React.createRef();
-    const addMessage = () => {
-        const text = inputRef.current.value;
-        dispatch(addMessageActionCreator(text));
-    };
+const MessageInput = ({ sendChanges, dialogsState, addMessage }) => {
     const onMessageChange = (e) => {
         const text = e.target.value;
-        dispatch(updateMessageActionCreator(text));
+        sendChanges(text);
     };
 
     return (
@@ -21,7 +12,6 @@ const MessageInput = ({ dispatch, dialogsState }) => {
             <input
                 onChange={onMessageChange}
                 value={dialogsState.messageInput}
-                ref={inputRef}
                 className={style.input}
                 type="text"
             />

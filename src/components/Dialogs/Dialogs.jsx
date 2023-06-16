@@ -1,7 +1,8 @@
 import style from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import MessageInput from "./MessageInput/MessageInput";
+import MessageInputContainer from "./MessageInput/MessageInputContainer";
+
 
 const Dialogs = ({ dialogsState, dispatch }) => {
   const dialogElements = dialogsState.dialogsData.map((dia) => (
@@ -19,7 +20,7 @@ const Dialogs = ({ dialogsState, dispatch }) => {
       <div className={style.dialogs}>{dialogElements}</div>
       <div className="messages">
         {messageElements}
-        <MessageInput dispatch={dispatch} dialogsState={dialogsState} />
+        <MessageInputContainer dispatch={dispatch} dialogsState={dialogsState} />
       </div>
     </div>
   );
