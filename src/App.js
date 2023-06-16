@@ -16,13 +16,7 @@ function App({ state, dispatch }) {
       <Navigation sidebar={state.sidebar} />
       <main className="app__main">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Profile profilePage={state.profilePage} dispatch={dispatch} />
-            }
-          />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Profile />} />
           <Route
             path="/dialogs/*"
             element={

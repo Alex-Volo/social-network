@@ -1,25 +1,28 @@
 import MessageInput from "./MessageInput";
-import React from "react";
+import React, { useContext } from "react";
 import {
-    addMessageActionCreator,
-    updateMessageActionCreator,
+  addMessageActionCreator,
+  updateMessageActionCreator,
 } from "../../../redux/dialogs-reducer";
+import StoreContext from "../../../StoreContext";
 
-const MessageInputContainer = ({ dispatch, dialogsState }) => {
-    const addMessage = () => {
-        dispatch(addMessageActionCreator());
-    };
-    const sendChanges = (text) => {
-        dispatch(updateMessageActionCreator(text));
-    };
+const MessageInputContainer = () => {
+  const storeContext = useContext(StoreContext);
 
-    return (
-        <MessageInput
-            dialogsState={dialogsState}
-            addMessage={addMessage}
-            sendChanges={sendChanges}
-        />
-    );
+  const addMessage = () => {
+    storeContext.dispatch(addMessageActionCreator());
+  };
+  const sendChanges = (text) => {
+    storeContext.dispatch(updateMessageActionCreator(text));
+  };
+
+  return (
+    <MessageInput
+      dialogsState={storeContext.getState().dialogsPage}
+      addMessage={addMessage}
+      sendChanges={sendChanges}
+    />
+  );
 };
 
 export default MessageInputContainer;
