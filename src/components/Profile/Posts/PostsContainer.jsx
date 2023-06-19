@@ -1,28 +1,28 @@
 import Posts from "./Posts";
 import {
-  transmitTextActionCreator,
-  addPostActionCreator,
+    transmitTextActionCreator,
+    addPostActionCreator,
 } from "../../../redux/profile-reducer";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const mapStateToProps = (state) => {
-  return {
-    postsData: state.profilePage.postsData,
-    textareaValue: state.profilePage.textareaValue,
-  };
+const PostsContainer = () => {
+    const dispatch = useDispatch();
+    const addPost = () => dispatch(addPostActionCreator());
+    const sendChanges = (textareaValue) =>
+        dispatch(transmitTextActionCreator(textareaValue));
+    const postsData = useSelector((state) => state.profilePage.postsData);
+    const textareaValue = useSelector(
+        (state) => state.profilePage.textareaValue
+    );
+
+    return (
+        <Posts
+            postsData={postsData}
+            textareaValue={textareaValue}
+            addPost={addPost}
+            sendChanges={sendChanges}
+        />
+    );
 };
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPost: () => {
-      dispatch(addPostActionCreator());
-    },
-    sendChanges: (textareaValue) => {
-      dispatch(transmitTextActionCreator(textareaValue));
-    },
-  };
-};
-
-const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Posts);
 
 export default PostsContainer;
