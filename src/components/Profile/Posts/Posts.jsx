@@ -16,7 +16,7 @@ const Posts = ({ postsData, textareaValue, addPost, sendChanges }) => {
         <button onClick={addPost}>Add post</button>
       </div>
       {postsData.map((post) => (
-        <Post text={post.text} likesCount={post.likesCount} />
+        <Post key={post.id} text={post.text} likesCount={post.likesCount} />
       ))}
     </div>
   );

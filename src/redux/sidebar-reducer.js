@@ -4,9 +4,9 @@ import ava3 from "./img/ava3.jpg";
 
 const initialState = {
   friends: [
-    { name: "Artur", ava: ava1 },
-    { name: "Alex", ava: ava2 },
-    { name: "Dmitriy", ava: ava3 },
+    { id: 1, name: "Artur", ava: ava1 },
+    { id: 2, name: "Alex", ava: ava2 },
+    { id: 3, name: "Dmitriy", ava: ava3 },
   ],
 };
 
