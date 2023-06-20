@@ -1,7 +1,7 @@
 import style from "./MessageInput.module.css";
 import React from "react";
 
-const MessageInput = ({ sendChanges, dialogsState, addMessage }) => {
+const MessageInput = ({ sendChanges, messageInput, addMessage }) => {
     const onMessageChange = (e) => {
         const text = e.target.value;
         sendChanges(text);
@@ -11,7 +11,7 @@ const MessageInput = ({ sendChanges, dialogsState, addMessage }) => {
         <div className={style.messageInputContainer}>
             <input
                 onChange={onMessageChange}
-                value={dialogsState.messageInput}
+                value={messageInput}
                 className={style.input}
                 type="text"
             />

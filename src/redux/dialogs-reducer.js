@@ -32,9 +32,12 @@ const dialogsReducer = (state = initialState, action) => {
                 id: state.messagesData.length + 1,
             };
             state.messageInput = "";
-            return { ...state, messagesData: [...state.messagesData, message] };
+            return {
+                ...state,
+                messagesData: [...state.messagesData, message],
+            };
         case "UPDATE-MESSAGE":
-            state.messageInput = action.message;
+            // state.messageInput = action.message;
             return { ...state, messageInput: action.message };
         default:
             break;

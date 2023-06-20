@@ -13,12 +13,12 @@ const MessageInputContainer = () => {
     const sendChanges = (text) => {
         dispatch(updateMessageActionCreator(text));
     };
-    const dialogsState = useSelector((state) => state.dialogsPage);
+    const messageInput = useSelector((state) => state.dialogsPage.messageInput);
 
     return (
         <MessageInput
             sendChanges={sendChanges}
-            dialogsState={dialogsState}
+            messageInput={messageInput}
             addMessage={addMessage}
         />
     );
