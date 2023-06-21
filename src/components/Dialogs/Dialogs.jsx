@@ -7,10 +7,10 @@ import { useSelector } from "react-redux";
 const Dialogs = () => {
     const dialogsPage = useSelector((state) => state.dialogsPage);
     const dialogElements = dialogsPage.dialogsData.map((dia) => (
-        <DialogItem name={dia.name} id={dia.id} ava={dia.ava} />
+        <DialogItem name={dia.name} key={dia.id} id={dia.id} ava={dia.ava} />
     ));
     const messageElements = dialogsPage.messagesData.map((mes) => (
-        <Message message={mes.message} />
+        <Message key={mes.id} message={mes.message} />
     ));
 
     return (
